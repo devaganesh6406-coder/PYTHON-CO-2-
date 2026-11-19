@@ -1,0 +1,14 @@
+# Task 1
+
+units = int(input("Enter electricity units: "))
+ration = input("Do you have ration card? (yes/no): ").lower()
+senior = input("Is any member above 80 years? (yes/no): ").lower()
+
+if units <= 100:
+    print("Full Subsidy")
+elif 101 <= units <= 200 and senior == "yes":
+    print("Partial Subsidy")
+elif units > 200 and senior == "yes":
+    print("Partial Subsidy")
+else:
+    print("No Subsidy")
