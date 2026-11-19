@@ -1,0 +1,36 @@
+# Task 3
+
+def normalise(text):
+    return text.replace(" ", "").replace("-", "").upper()
+
+
+def is_valid(reg):
+    if len(reg) not in (9, 10):
+        return False
+
+    if not reg[:2].isalpha():
+        return False
+
+    if not reg[2:4].isdigit():
+        return False
+
+    if not reg[4:6].isalpha():
+        return False
+
+    if not reg[6:].isdigit():
+        return False
+
+    return True
+
+
+raw = input("Enter vehicle number: ")
+reg = normalise(raw)
+
+print("Normalized:", reg)
+
+if is_valid(reg):
+    print("Valid")
+    print("Formatted:", reg[:2] + " " +
+          reg[2:4] + " " + reg[4:6] + " " + reg[6:])
+else:
+    print("INVALID")
